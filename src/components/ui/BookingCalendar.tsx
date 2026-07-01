@@ -134,14 +134,14 @@ export default function BookingCalendar() {
               exit={{ opacity: 0, x: -20 }}
               className="flex flex-col h-full"
             >
-              <h4 className="text-white font-bold mb-6 flex items-center justify-between">
+              <h4 className="text-white font-bold mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <span>Select a Date & Time</span>
                 
                 {/* Timezone Selector */}
                 <select 
                   value={clientTz}
                   onChange={(e) => setClientTz(e.target.value)}
-                  className="bg-[#222] border border-white/10 text-white/70 text-xs rounded-md px-2 py-1 outline-none focus:border-[#FF5A2A] transition-colors max-w-[150px] truncate"
+                  className="bg-[#222] border border-white/10 text-white/70 text-xs rounded-md px-2 py-2 sm:py-1 outline-none focus:border-[#FF5A2A] transition-colors w-full sm:max-w-[150px] truncate"
                 >
                   <option value={clientTz}>{clientTz} (Local)</option>
                   <optgroup label="Popular Timezones">
