@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, TrendingUp, Users, Zap } from "lucide-react";
+import Image from "next/image";
 
 const PROJECTS = [
   {
@@ -85,7 +86,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0], index: n
         </div>
         
         <div className="relative h-[300px] lg:h-[400px] rounded-2xl overflow-hidden bg-black/50 border border-white/10 group-hover:border-white/20 transition-colors duration-500 flex items-center justify-center">
-           <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+           <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
            
            {/* Metrics Overlay on Hover */}
            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">

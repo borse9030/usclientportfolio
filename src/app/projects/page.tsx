@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, animate } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
+import Image from "next/image";
 import Footer from "@/components/sections/Footer";
 
 const LIVE_DEMOS = [
@@ -117,7 +118,7 @@ export default function ProjectsPage() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative h-[400px] rounded-3xl bg-gradient-to-br ${demo.color} border ${demo.border} overflow-hidden cursor-pointer flex flex-col justify-between p-8`}
             >
-              <img src={demo.image} alt={demo.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+              <Image src={demo.image} alt={demo.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
               <div className="absolute inset-0 bg-[#0A0A0A]/60 group-hover:bg-[#0A0A0A]/20 transition-colors duration-500" />
               
               <div className="relative z-10 flex justify-between items-start">
@@ -156,7 +157,7 @@ export default function ProjectsPage() {
               className={`group shrink-0 min-w-[85vw] rounded-3xl bg-[#111] border ${demo.border} overflow-hidden cursor-pointer flex flex-col`}
             >
               <div className="h-[200px] w-full relative">
-                <img src={demo.image} alt={demo.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-80" />
+                <Image src={demo.image} alt={demo.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 rounded-full bg-black/50 text-white text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">
