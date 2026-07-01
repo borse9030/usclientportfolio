@@ -72,7 +72,7 @@ export default function ProjectsPage() {
           <h2 className="text-3xl font-bold text-white uppercase tracking-tight">Live Demos</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-2 gap-6 pb-4 md:pb-0">
           {LIVE_DEMOS.map((demo, i) => (
             <motion.a 
               href={demo.link}
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group relative h-[300px] rounded-3xl bg-gradient-to-br ${demo.color} border ${demo.border} overflow-hidden cursor-pointer flex flex-col justify-between p-8`}
+              className={`group relative h-[300px] shrink-0 min-w-[85vw] md:min-w-0 snap-center rounded-3xl bg-gradient-to-br ${demo.color} border ${demo.border} overflow-hidden cursor-pointer flex flex-col justify-between p-8`}
             >
               <img src={demo.image} alt={demo.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
               <div className="absolute inset-0 bg-[#0A0A0A]/60 group-hover:bg-[#0A0A0A]/20 transition-colors duration-500" />
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-8 pb-4 md:pb-0">
             {REVIEWS.map((review, i) => (
               <motion.div 
                 key={i}
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-xl shadow-black/5 flex flex-col gap-6 hover:-translate-y-2 transition-transform duration-300"
+                className="shrink-0 min-w-[85vw] md:min-w-0 snap-center bg-white rounded-3xl p-8 shadow-xl shadow-black/5 flex flex-col gap-6 hover:-translate-y-2 transition-transform duration-300"
               >
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
