@@ -17,6 +17,7 @@ const PROJECTS = [
     ],
     tech: ["React", "Next.js", "Tailwind CSS"],
     link: "https://zuppa-the-food-delhivery-app.vercel.app/",
+    image: "/zuppa.jpg",
     color: "from-orange-600/20 to-red-600/20",
     border: "group-hover:border-orange-500/50",
   },
@@ -32,6 +33,7 @@ const PROJECTS = [
     ],
     tech: ["HTML", "CSS", "JavaScript", "Framer"],
     link: "https://bhaveshskate.netlify.app/",
+    image: "/skate.jpg",
     color: "from-blue-600/20 to-purple-600/20",
     border: "group-hover:border-blue-500/50",
   }
@@ -83,9 +85,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0], index: n
         </div>
         
         <div className="relative h-[300px] lg:h-[400px] rounded-2xl overflow-hidden bg-black/50 border border-white/10 group-hover:border-white/20 transition-colors duration-500 flex items-center justify-center">
-           {/* Placeholder for actual project image/video - abstract visualization instead */}
-           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
-           <div className="w-32 h-32 rounded-full bg-gradient-to-br from-white/20 to-transparent blur-2xl absolute animate-pulse" />
+           <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
            
            {/* Metrics Overlay on Hover */}
            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">

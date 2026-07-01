@@ -6,27 +6,19 @@ import Footer from "@/components/sections/Footer";
 
 const LIVE_DEMOS = [
   {
-    title: "AI Dashboard",
-    niche: "SaaS Platform",
-    color: "from-purple-500/20 to-blue-500/20",
-    border: "border-purple-500/30",
-  },
-  {
-    title: "E-Commerce Premium",
-    niche: "D2C Brand",
-    color: "from-emerald-500/20 to-teal-500/20",
-    border: "border-emerald-500/30",
-  },
-  {
-    title: "Creative Agency",
-    niche: "Portfolio",
+    title: "Zuppa Food Delivery",
+    niche: "Web App",
+    link: "https://zuppa-the-food-delhivery-app.vercel.app/",
+    image: "/zuppa.jpg",
     color: "from-orange-500/20 to-red-500/20",
     border: "border-orange-500/30",
   },
   {
-    title: "FinTech App",
-    niche: "Web3/Crypto",
-    color: "from-blue-500/20 to-cyan-500/20",
+    title: "Bhavesh Skate",
+    niche: "Interactive Website",
+    link: "https://bhaveshskate.netlify.app/",
+    image: "/skate.jpg",
+    color: "from-blue-500/20 to-purple-500/20",
     border: "border-blue-500/30",
   }
 ];
@@ -82,7 +74,10 @@ export default function ProjectsPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {LIVE_DEMOS.map((demo, i) => (
-            <motion.div 
+            <motion.a 
+              href={demo.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +85,8 @@ export default function ProjectsPage() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative h-[300px] rounded-3xl bg-gradient-to-br ${demo.color} border ${demo.border} overflow-hidden cursor-pointer flex flex-col justify-between p-8`}
             >
-              <div className="absolute inset-0 bg-[#0A0A0A]/40 group-hover:bg-[#0A0A0A]/20 transition-colors duration-500" />
+              <img src={demo.image} alt={demo.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-[#0A0A0A]/60 group-hover:bg-[#0A0A0A]/20 transition-colors duration-500" />
               
               <div className="relative z-10 flex justify-between items-start">
                 <span className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-md">
@@ -106,7 +102,7 @@ export default function ProjectsPage() {
                   {demo.title}
                 </h3>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </section>
