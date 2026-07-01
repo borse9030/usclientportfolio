@@ -56,14 +56,14 @@ export default function Footer() {
         </div>
 
         {/* Edge-to-Edge Typography */}
-        <div className="w-full flex justify-center mt-auto px-4 overflow-hidden">
+        <div className="w-full flex justify-center mt-auto px-4 overflow-hidden py-4">
           <h2 className="text-[15vw] leading-[0.8] font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10 tracking-tighter w-full text-center flex justify-between uppercase">
             {textToAnimate.split("").map((letter, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "100px" }}
+                viewport={{ once: true, margin: "100px", amount: 0.1 }}
                 transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
               >
                 {letter}
