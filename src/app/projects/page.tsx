@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animate } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import Footer from "@/components/sections/Footer";
 
@@ -51,15 +51,24 @@ export default function ProjectsPage() {
       if (carouselRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
         
+        let targetScroll = scrollLeft + clientWidth;
+        
         // If scrolled to the end (with a small 10px buffer), go back to start
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
-          carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          // Scroll right by the width of the viewport
-          carouselRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+          targetScroll = 0;
         }
+
+        animate(scrollLeft, targetScroll, {
+          duration: 1.2,
+          ease: "easeInOut",
+          onUpdate: (latest) => {
+            if (carouselRef.current) {
+              carouselRef.current.scrollLeft = latest;
+            }
+          }
+        });
       }
-    }, 3500);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, []);
@@ -132,7 +141,7 @@ export default function ProjectsPage() {
         {/* MOBILE VIEW */}
         <div 
           ref={carouselRef}
-          className="flex md:hidden overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4"
+          className="flex md:hidden overflow-x-auto hide-scrollbar gap-6 pb-4"
         >
           {LIVE_DEMOS.map((demo, i) => (
             <motion.a 
@@ -144,7 +153,7 @@ export default function ProjectsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group shrink-0 min-w-[85vw] snap-center rounded-3xl bg-[#111] border ${demo.border} overflow-hidden cursor-pointer flex flex-col`}
+              className={`group shrink-0 min-w-[85vw] rounded-3xl bg-[#111] border ${demo.border} overflow-hidden cursor-pointer flex flex-col`}
             >
               <div className="h-[200px] w-full relative">
                 <img src={demo.image} alt={demo.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-80" />
