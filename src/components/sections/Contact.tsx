@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 import BookingCalendar from "@/components/ui/BookingCalendar";
 
 export default function Contact() {
-  const whatsappNumber = "917972565911";
+  const whatsappNumber = "919529185458";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Bhavesh, I'm interested in working with you on a website project!")}`;
 
   return (

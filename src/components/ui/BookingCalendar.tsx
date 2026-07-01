@@ -83,7 +83,7 @@ export default function BookingCalendar() {
     
     const message = `Hi Bhavesh, I'd like to book a free video call.\n\n*Date:* ${formattedDate}\n*Time:* ${selectedSlot} (${clientTz})\n*Name:* ${name}\n*Project/Details:* ${projectUrl || "N/A"}\n\nLooking forward to it!`;
     
-    const whatsappUrl = `https://wa.me/917972565911?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919529185458?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

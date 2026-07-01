@@ -57,7 +57,7 @@ export default function Hero() {
         className="mt-12"
       >
         <a 
-          href="https://wa.me/917972565911?text=Hi%20Bhavesh,%20I'm%20interested%20in%20working%20with%20you!"
+          href="https://wa.me/919529185458?text=Hi%20Bhavesh,%20I'm%20interested%20in%20working%20with%20you!"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-4 bg-transparent hover:bg-white/5 border border-white/10 rounded-full pl-6 pr-2 py-2 transition-all duration-300"
