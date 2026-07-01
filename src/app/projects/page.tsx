@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import Footer from "@/components/sections/Footer";
@@ -44,6 +44,25 @@ const REVIEWS = [
 
 export default function ProjectsPage() {
   const [expandedReviewIndex, setExpandedReviewIndex] = useState<number | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+        
+        // If scrolled to the end (with a small 10px buffer), go back to start
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Scroll right by the width of the viewport
+          carouselRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+        }
+      }
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <main className="flex flex-col w-full min-h-screen bg-[#0A0A0A] pt-32">
@@ -111,7 +130,10 @@ export default function ProjectsPage() {
         </div>
 
         {/* MOBILE VIEW */}
-        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4">
+        <div 
+          ref={carouselRef}
+          className="flex md:hidden overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4"
+        >
           {LIVE_DEMOS.map((demo, i) => (
             <motion.a 
               href={demo.link}
