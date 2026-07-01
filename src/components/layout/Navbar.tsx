@@ -39,7 +39,13 @@ export default function Navbar() {
         </div>
 
         <button 
-          onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => {
+            if (pathname === '/') {
+              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              window.location.href = '/#booking';
+            }
+          }}
           className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-[#10B981] text-[#0A0A0A] font-bold text-[10px] md:text-xs uppercase tracking-widest hover:bg-[#0ea5e9] transition-all duration-300 cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(14,165,233,0.5)] flex-shrink-0"
         >
           Book Call
