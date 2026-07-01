@@ -7,43 +7,33 @@ import { ArrowUpRight, TrendingUp, Users, Zap } from "lucide-react";
 const PROJECTS = [
   {
     id: 1,
-    title: "Aura SaaS Platform",
+    title: "Zuppa Food Delivery",
     category: "Web Application",
-    description: "A complete redesign of a financial SaaS dashboard, improving user retention by 40%.",
+    description: "A comprehensive, high-performance food delivery platform designed for seamless user experience and fast ordering.",
     metrics: [
-      { label: "Retention", value: "+40%", icon: Users },
-      { label: "Load Time", value: "-1.2s", icon: Zap },
+      { label: "Orders", value: "10k+", icon: Users },
+      { label: "Load Time", value: "<1s", icon: Zap },
       { label: "Conversion", value: "+15%", icon: TrendingUp },
     ],
-    tech: ["Next.js", "Tailwind", "Framer Motion", "Supabase"],
-    color: "from-blue-600/20 to-purple-600/20",
-    border: "group-hover:border-blue-500/50",
-  },
-  {
-    id: 2,
-    title: "Lumina Restaurant QR",
-    category: "Interactive System",
-    description: "A contactless ordering system with 3D menu previews, increasing average order value.",
-    metrics: [
-      { label: "AOV", value: "+22%", icon: TrendingUp },
-      { label: "Orders", value: "10k+", icon: Users },
-    ],
-    tech: ["React", "Three.js", "Node.js", "Stripe"],
+    tech: ["React", "Next.js", "Tailwind CSS"],
+    link: "https://zuppa-the-food-delhivery-app.vercel.app/",
     color: "from-orange-600/20 to-red-600/20",
     border: "group-hover:border-orange-500/50",
   },
   {
-    id: 3,
-    title: "Nexus AI Dashboard",
-    category: "AI Integration",
-    description: "An AI-powered analytics dashboard that processes millions of data points in real-time.",
+    id: 2,
+    title: "Bhavesh Skate",
+    category: "Interactive Website",
+    description: "A dynamic, visually immersive skate brand website featuring high-end scroll animations and premium aesthetics.",
     metrics: [
-      { label: "Speed", value: "10x", icon: Zap },
-      { label: "Accuracy", value: "99.9%", icon: Target },
+      { label: "Engagement", value: "+45%", icon: Users },
+      { label: "Speed", value: "A+", icon: Zap },
+      { label: "Design", value: "Award", icon: Target },
     ],
-    tech: ["Next.js", "Python", "TensorFlow", "WebSockets"],
-    color: "from-emerald-600/20 to-teal-600/20",
-    border: "group-hover:border-emerald-500/50",
+    tech: ["HTML", "CSS", "JavaScript", "Framer"],
+    link: "https://bhaveshskate.netlify.app/",
+    color: "from-blue-600/20 to-purple-600/20",
+    border: "group-hover:border-blue-500/50",
   }
 ];
 
@@ -86,12 +76,9 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0], index: n
           </div>
 
           <div className="flex gap-4 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 absolute bottom-8 lg:relative lg:bottom-auto">
-            <button className="magnetic flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-full hover:scale-105 transition-transform">
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="magnetic flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-full hover:scale-105 transition-transform">
               Live Demo <ArrowUpRight className="w-4 h-4" />
-            </button>
-            <button className="magnetic flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-colors">
-              Case Study
-            </button>
+            </a>
           </div>
         </div>
         
