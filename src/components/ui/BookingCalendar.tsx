@@ -255,33 +255,32 @@ export default function BookingCalendar() {
             )}
           </AnimatePresence>
         </div>
-      </div>
-
-      {/* ======================= */}
+      </div>      {/* ======================= */}
       {/* MOBILE UI (hidden md)   */}
       {/* ======================= */}
-      <div className="md:hidden w-full bg-[#111] border border-white/10 rounded-[24px] overflow-hidden shadow-2xl flex flex-col">
+      <div className="md:hidden w-full max-w-full sm:max-w-sm mx-auto bg-[#111] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
         
         {/* Mobile Header */}
-        <div className="bg-[#1A1A1A] p-5 border-b border-white/5">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-12 rounded-full bg-[#FF5A2A]/20 flex items-center justify-center shrink-0">
-              <Calendar className="text-[#FF5A2A] w-6 h-6" />
+        <div className="bg-[#1A1A1A] p-4 border-b border-white/5">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-full bg-[#FF5A2A]/20 flex items-center justify-center shrink-0">
+              <Calendar className="text-[#FF5A2A] w-5 h-5" />
             </div>
-            <div>
-              <h3 className="text-xl font-black text-white uppercase tracking-tight leading-tight">
+            <div className="min-w-0">
+              <h3 className="text-lg font-black text-white uppercase tracking-tight leading-tight truncate">
                 Strategy Call
               </h3>
-              <p className="text-[#10B981] text-[10px] font-bold uppercase tracking-widest mt-1">30 Minutes • Free</p>
+              <p className="text-[#10B981] text-[9px] font-bold uppercase tracking-widest mt-0.5">30 Min • Free</p>
             </div>
           </div>
           
-          <div className="w-full bg-[#222] rounded-xl p-3 border border-white/5 flex flex-col gap-1.5">
-            <label className="text-[9px] text-white/40 uppercase font-bold tracking-widest">Your Timezone</label>
+          <div className="w-full bg-[#222] rounded-lg p-2.5 border border-white/5 flex flex-col gap-1 overflow-hidden">
+            <label className="text-[8px] text-white/40 uppercase font-bold tracking-widest">Your Timezone</label>
             <select 
               value={clientTz}
               onChange={(e) => setClientTz(e.target.value)}
-              className="w-full bg-transparent text-white/90 text-sm outline-none focus:text-[#FF5A2A] transition-colors truncate"
+              className="w-full bg-transparent text-white/90 text-xs outline-none focus:text-[#FF5A2A] transition-colors truncate"
+              style={{ maxWidth: '100%' }}
             >
               <option value={clientTz}>{clientTz} (Local)</option>
               <optgroup label="Popular Timezones">
@@ -294,7 +293,7 @@ export default function BookingCalendar() {
         </div>
 
         {/* Mobile Interactive Area */}
-        <div className="p-4 relative min-h-[400px]">
+        <div className="p-3 relative min-h-[350px]">
           <AnimatePresence mode="wait">
             
             {step === 1 && (
@@ -303,36 +302,36 @@ export default function BookingCalendar() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="flex flex-col gap-3 h-full"
+                className="flex flex-col gap-2 h-full"
               >
-                <div className="text-[10px] text-white/50 font-bold uppercase tracking-widest mb-2 px-1">
+                <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest mb-1 px-1">
                   Select Date & Time
                 </div>
                 
                 {/* Vertical Accordion Dates */}
-                <div className="flex flex-col gap-2.5 pb-20">
+                <div className="flex flex-col gap-2 pb-16">
                   {availableDates.map((date, i) => {
                     const isExpanded = expandedDateIndex === i;
                     const dateSlots = generateLocalSlots(date);
                     
                     return (
-                      <div key={i} className="flex flex-col">
+                      <div key={i} className="flex flex-col w-full overflow-hidden">
                         <button
                           onClick={() => {
                             setExpandedDateIndex(isExpanded ? null : i);
                             setSelectedDate(date);
                             setSelectedSlot(null);
                           }}
-                          className={`w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-300 ${isExpanded ? 'bg-[#FF5A2A] border-[#FF5A2A] text-white shadow-lg' : 'bg-[#1A1A1A] border-white/5 text-white/70 hover:border-white/20'}`}
+                          className={`w-full flex items-center justify-between p-3 rounded-lg border transition-all duration-300 ${isExpanded ? 'bg-[#FF5A2A] border-[#FF5A2A] text-white shadow-md' : 'bg-[#1A1A1A] border-white/5 text-white/70 hover:border-white/20'}`}
                         >
-                          <div className="flex items-center gap-4">
-                            <div className="flex flex-col items-center justify-center w-10">
-                              <span className="text-[10px] uppercase font-bold opacity-70">{format(date, "MMM")}</span>
-                              <span className="text-2xl font-black leading-none my-0.5">{format(date, "d")}</span>
+                          <div className="flex items-center gap-3 min-w-0">
+                            <div className="flex flex-col items-center justify-center w-8 shrink-0">
+                              <span className="text-[9px] uppercase font-bold opacity-70">{format(date, "MMM")}</span>
+                              <span className="text-xl font-black leading-none my-0.5">{format(date, "d")}</span>
                             </div>
-                            <span className="text-sm font-bold uppercase tracking-wide">{format(date, "EEEE")}</span>
+                            <span className="text-xs font-bold uppercase tracking-wide truncate">{format(date, "EEEE")}</span>
                           </div>
-                          <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-white' : 'text-white/30'}`} />
+                          <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-white' : 'text-white/30'}`} />
                         </button>
 
                         {/* Accordion Content: Timeslots */}
@@ -342,14 +341,14 @@ export default function BookingCalendar() {
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
-                              className="overflow-hidden"
+                              className="overflow-hidden w-full"
                             >
-                              <div className="pt-2.5 pb-1 grid grid-cols-2 gap-2">
+                              <div className="pt-2 pb-1 grid grid-cols-2 gap-1.5 w-full">
                                 {dateSlots.map((slot, j) => (
                                   <button
                                     key={j}
                                     onClick={() => setSelectedSlot(slot.localTime)}
-                                    className={`py-3 rounded-lg border text-sm font-bold transition-all duration-300 ${selectedSlot === slot.localTime && isSameDay(date, selectedDate!) ? 'bg-white text-black border-white' : 'bg-[#222] border-white/5 text-white/70 active:bg-white/10'}`}
+                                    className={`py-2 px-1 rounded-md border text-[11px] sm:text-xs font-bold transition-all duration-300 truncate w-full ${selectedSlot === slot.localTime && isSameDay(date, selectedDate!) ? 'bg-white text-black border-white' : 'bg-[#222] border-white/5 text-white/70 active:bg-white/10'}`}
                                   >
                                     {slot.localTime}
                                   </button>
@@ -364,11 +363,11 @@ export default function BookingCalendar() {
                 </div>
 
                 {/* Sticky Bottom Action */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#111] via-[#111] to-transparent pt-8">
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-[#111] via-[#111] to-transparent pt-6">
                   <button
                     disabled={!selectedSlot}
                     onClick={() => setStep(2)}
-                    className={`w-full py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all duration-300 shadow-xl ${selectedSlot ? 'bg-white text-black hover:bg-gray-200' : 'bg-white/5 text-white/20'}`}
+                    className={`w-full py-3 rounded-lg font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-lg ${selectedSlot ? 'bg-white text-black hover:bg-gray-200' : 'bg-white/5 text-white/20'}`}
                   >
                     Continue
                   </button>
@@ -383,58 +382,58 @@ export default function BookingCalendar() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 onSubmit={handleBook}
-                className="flex flex-col gap-6 h-full pb-20"
+                className="flex flex-col gap-4 h-full pb-16"
               >
                 <div className="flex items-center justify-between">
                   <button 
                     type="button"
                     onClick={() => setStep(1)}
-                    className="text-[#FF5A2A] text-xs font-bold uppercase tracking-widest"
+                    className="text-[#FF5A2A] text-[10px] font-bold uppercase tracking-widest"
                   >
                     ← Back
                   </button>
-                  <span className="text-[10px] text-white/50 uppercase tracking-widest font-bold">Step 2 of 2</span>
+                  <span className="text-[9px] text-white/50 uppercase tracking-widest font-bold">Step 2 of 2</span>
                 </div>
 
-                <div className="bg-[#1A1A1A] border border-white/5 rounded-xl p-5 text-sm shadow-inner">
-                  <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Selected Time</span> <br/>
-                  <div className="mt-2 text-base font-bold text-white">
-                    {selectedDate ? format(selectedDate, "EEEE, MMM do") : ""} <br/>
+                <div className="bg-[#1A1A1A] border border-white/5 rounded-lg p-3 text-xs shadow-inner w-full overflow-hidden">
+                  <span className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Selected Time</span> <br/>
+                  <div className="mt-1 text-sm font-bold text-white truncate">
+                    {selectedDate ? format(selectedDate, "MMM do") : ""} <br/>
                     <span className="text-[#10B981]">{selectedSlot}</span>
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                <div className="space-y-2 w-full overflow-hidden">
+                  <div className="relative w-full">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                     <input 
                       type="text"
                       required
                       value={name}
                       onChange={e => setName(e.target.value)}
                       placeholder="Your Name *"
-                      className="w-full bg-[#222] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white outline-none focus:border-[#FF5A2A]"
+                      className="w-full bg-[#222] border border-white/10 rounded-lg py-3 pl-9 pr-3 text-sm text-white outline-none focus:border-[#FF5A2A]"
                     />
                   </div>
                   
-                  <div className="relative">
-                    <LinkIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                  <div className="relative w-full">
+                    <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                     <input 
                       type="text"
                       value={projectUrl}
                       onChange={e => setProjectUrl(e.target.value)}
-                      placeholder="Project URL (Optional)"
-                      className="w-full bg-[#222] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white outline-none focus:border-[#FF5A2A]"
+                      placeholder="Project URL"
+                      className="w-full bg-[#222] border border-white/10 rounded-lg py-3 pl-9 pr-3 text-sm text-white outline-none focus:border-[#FF5A2A]"
                     />
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#111]">
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-[#111]">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all duration-300 bg-[#10B981] text-[#0A0A0A] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.2)]"
+                    className="w-full py-3 rounded-lg font-bold uppercase tracking-widest text-xs transition-all duration-300 bg-[#10B981] text-[#0A0A0A] flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
                   >
-                    <Send className="w-4 h-4" />
+                    <Send className="w-3 h-3" />
                     Confirm on WhatsApp
                   </button>
                 </div>
