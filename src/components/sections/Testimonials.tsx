@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const TESTIMONIALS = [
-  { id: 1, name: "Sarah Jenkins", role: "CEO, Aura Tech", content: "Bhavesh completely transformed our web presence. The new dashboard increased our user retention by 40%. Absolutely world-class.", color: "from-blue-400 to-indigo-500" },
-  { id: 2, name: "Michael Chen", role: "Founder, Lumina Dining", content: "The 3D interactive menu is something our customers can't stop talking about. It feels like magic. Best investment we made this year.", color: "from-orange-400 to-red-500" },
+  { id: 1, name: "Alex", role: "Founder, Zuppa Food Delivery", content: "Bhavesh delivered an outstanding platform for Zuppa. The performance is incredibly fast, and the sleek UI has drastically improved our order conversions. He completely understood our vision and executed it flawlessly.", color: "from-blue-400 to-indigo-500" },
+  { id: 2, name: "Sopan", role: "Owner, Bhavesh Skate", content: "Working with Bhavesh was a game-changer for our skate brand. The immersive 3D effects and smooth scroll animations he implemented make our site stand out. Our audience loves the new interactive experience!", color: "from-orange-400 to-red-500" },
   { id: 3, name: "Elena Rodriguez", role: "Director, Nexus AI", content: "Finding a developer who understands both hardcore performance and premium aesthetics is rare. Bhavesh is that rare talent.", color: "from-emerald-400 to-teal-500" },
   { id: 4, name: "David Kim", role: "VP Marketing, Stellar", content: "Our conversion rates doubled in the first month after launch. The site isn't just beautiful, it's a lead generation machine.", color: "from-purple-400 to-fuchsia-500" },
 ];
