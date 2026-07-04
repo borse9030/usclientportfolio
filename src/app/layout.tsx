@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   title: "Bhavesh Works | Premium Web Developer & Frontend Architect",
   description: "Bhavesh Works: Crafting Websites That Clients Remember. I build premium websites, SaaS products, AI dashboards, and high-converting digital experiences.",
   keywords: ["Bhavesh Works", "bhavesworks", "workwitbhavesh", "bhaveshwork", "bhaveshworks.online", "Web Developer", "Frontend Architect", "UX Design", "Next.js", "React", "Portfolio"],
+  icons: {
+    icon: "/Hero Image.png",
+    shortcut: "/Hero Image.png",
+    apple: "/Hero Image.png",
+  },
   authors: [{ name: "Bhavesh" }],
   metadataBase: new URL("https://bhaveshworks.online"),
   openGraph: {
