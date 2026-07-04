@@ -16,12 +16,12 @@ const LIVE_DEMOS = [
     border: "border-orange-500/30",
   },
   {
-    title: "Bhavesh Skate",
-    niche: "Interactive Website",
-    link: "/projects/skate",
-    image: "/skate.jpg",
-    color: "from-blue-500/20 to-purple-500/20",
-    border: "border-blue-500/30",
+    title: "Zuppa Delivery App",
+    niche: "Consumer Web App",
+    link: "/projects/zuppa-app",
+    image: "/zuppa.jpg",
+    color: "from-red-500/20 to-orange-500/20",
+    border: "border-red-500/30",
   }
 ];
 
