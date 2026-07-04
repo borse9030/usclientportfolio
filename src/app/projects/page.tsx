@@ -8,10 +8,10 @@ import Footer from "@/components/sections/Footer";
 
 const LIVE_DEMOS = [
   {
-    title: "Zuppa Food Delivery",
-    niche: "Web App",
+    title: "Zuppa Smart QR",
+    niche: "Flagship SaaS (Live in 10+ shops)",
     link: "/projects/zuppa",
-    image: "/zuppa.jpg",
+    image: "/zuppa-showcase.png",
     color: "from-orange-500/20 to-red-500/20",
     border: "border-orange-500/30",
   },
