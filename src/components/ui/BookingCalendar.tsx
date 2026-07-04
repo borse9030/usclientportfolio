@@ -165,7 +165,7 @@ export default function BookingCalendar() {
                       <button
                         key={i}
                         onClick={() => { setSelectedDate(date); setSelectedSlot(null); }}
-                        className={`flex-shrink-0 flex flex-col items-center justify-center w-20 h-24 rounded-2xl border transition-all duration-300 ${isSelected ? 'bg-[#FF5A2A] border-[#FF5A2A] text-white shadow-[0_0_20px_rgba(255,90,42,0.3)]' : 'bg-[#222] border-white/5 text-white/50 hover:border-white/20'}`}
+                        className={`flex-shrink-0 flex flex-col items-center justify-center w-20 h-24 rounded-2xl border transition-all duration-300 ${isSelected ? 'bg-[#FF5A2A] border-[#FF5A2A] text-[#0A0A0A] shadow-[0_0_20px_rgba(255,90,42,0.3)]' : 'bg-[#222] border-white/5 text-white/50 hover:border-white/20'}`}
                       >
                         <span className="text-xs uppercase font-bold tracking-widest mb-1">{format(date, "MMM")}</span>
                         <span className="text-2xl font-black">{format(date, "d")}</span>
@@ -276,7 +276,7 @@ export default function BookingCalendar() {
           </div>
           
           <div className="w-full bg-[#222] rounded-lg p-2.5 border border-white/5 flex flex-col gap-1 overflow-hidden">
-            <label className="text-[8px] text-white/40 uppercase font-bold tracking-widest">Your Timezone</label>
+            <label className="text-[8px] text-white/70 uppercase font-bold tracking-widest">Your Timezone</label>
             <select 
               aria-label="Select Timezone"
               value={clientTz}
@@ -324,7 +324,7 @@ export default function BookingCalendar() {
                             setSelectedDate(date);
                             setSelectedSlot(null);
                           }}
-                          className={`w-full flex items-center justify-between p-3 rounded-lg border transition-all duration-300 ${isExpanded ? 'bg-[#FF5A2A] border-[#FF5A2A] text-white shadow-md' : 'bg-[#1A1A1A] border-white/5 text-white/70 hover:border-white/20'}`}
+                          className={`w-full flex items-center justify-between p-3 rounded-lg border transition-all duration-300 ${isExpanded ? 'bg-[#FF5A2A] border-[#FF5A2A] text-[#0A0A0A] shadow-md' : 'bg-[#1A1A1A] border-white/5 text-white/70 hover:border-white/20'}`}
                         >
                           <div className="flex items-center gap-3 min-w-0">
                             <div className="flex flex-col items-center justify-center w-8 shrink-0">
@@ -333,7 +333,7 @@ export default function BookingCalendar() {
                             </div>
                             <span className="text-xs font-bold uppercase tracking-wide truncate">{format(date, "EEEE")}</span>
                           </div>
-                          <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-white' : 'text-white/30'}`} />
+                          <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#0A0A0A]' : 'text-white/30'}`} />
                         </button>
 
                         {/* Accordion Content: Timeslots */}
@@ -398,7 +398,7 @@ export default function BookingCalendar() {
                 </div>
 
                 <div className="bg-[#1A1A1A] border border-white/5 rounded-lg p-3 text-xs shadow-inner w-full overflow-hidden">
-                  <span className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Selected Time</span> <br/>
+                  <span className="text-white/70 text-[9px] font-bold uppercase tracking-widest">Selected Time</span> <br/>
                   <div className="mt-1 text-sm font-bold text-white truncate">
                     {selectedDate ? format(selectedDate, "MMM do") : ""} <br/>
                     <span className="text-[#10B981]">{selectedSlot}</span>

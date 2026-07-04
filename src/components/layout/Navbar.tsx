@@ -16,7 +16,7 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between md:justify-center gap-2 md:gap-8 px-4 md:px-6 py-3 bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(255,90,42,0.15)] rounded-full w-full">
         
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+        <Link href="/" aria-label="Home" className="flex items-center gap-2 flex-shrink-0">
           <div className="w-3 h-3 md:w-4 md:h-4 bg-[#FF5A2A] rounded-sm shadow-[0_0_10px_rgba(255,90,42,0.5)]" />
           <span className="text-white font-black tracking-tighter text-base md:text-lg hidden sm:block">BHAVESH.</span>
         </Link>
