@@ -10,7 +10,7 @@ export default function Hero() {
 
       {/* Pill Badge */}
       <div 
-        className="flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 mb-10 backdrop-blur-md opacity-0 animate-hero-fade-in-up"
+        className="flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 mb-10 backdrop-blur-md animate-hero-fade-in-up"
         style={{ animationDelay: '0ms' }}
       >
         <div className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />
@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Massive Typography Main Heading */}
       <div
-        className="w-full max-w-[90vw] mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black opacity-0 animate-hero-fade-in-up"
+        className="w-full max-w-[90vw] mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black animate-hero-fade-in-up"
         style={{ animationDelay: '100ms' }}
       >
         <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[8rem] lg:text-[10rem] text-[#F3F4F6] m-0 p-0 uppercase break-words leading-[0.9] text-center w-full">
@@ -34,7 +34,7 @@ export default function Hero() {
 
       {/* Subheading */}
       <p
-        className="mt-8 md:mt-10 text-base sm:text-xl md:text-2xl text-[#A1A1AA] max-w-[95%] md:max-w-2xl mx-auto font-medium opacity-0 animate-hero-fade-in-up"
+        className="mt-8 md:mt-10 text-base sm:text-xl md:text-2xl text-[#A1A1AA] max-w-[95%] md:max-w-2xl mx-auto font-medium animate-hero-fade-in-up"
         style={{ animationDelay: '300ms' }}
       >
         Build a world-class digital presence and attract premium clients — 
@@ -44,7 +44,7 @@ export default function Hero() {
 
       {/* CTA Button */}
       <div
-        className="mt-12 opacity-0 animate-hero-fade-in-up"
+        className="mt-12 animate-hero-fade-in-up"
         style={{ animationDelay: '400ms' }}
       >
         <a 
