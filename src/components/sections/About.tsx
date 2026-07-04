@@ -55,8 +55,12 @@ export default function About() {
               I don't just write code. I engineer digital experiences designed to build immense trust, elevate your brand perception, and directly increase your bottom line.
             </p>
 
+            <p className="text-[#A1A1AA] text-base md:text-xl font-medium max-w-lg mb-6">
+              Welcome to <strong>Bhavesh Works</strong>. When you choose to <strong>work with Bhavesh</strong>, you get a dedicated technical partner who understands business, aesthetics, and premium execution.
+            </p>
+
             <p className="text-[#A1A1AA] text-base md:text-xl font-medium max-w-lg">
-              When you work with me, you get a dedicated technical partner who understands business, aesthetics, and premium execution.
+              Every piece of <strong>Bhavesh work</strong> is tailored to help independent brands and agencies scale with a world-class digital presence.
             </p>
           </motion.div>
         </div>
