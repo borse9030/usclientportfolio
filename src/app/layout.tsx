@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 import CursorWrapper from "@/components/ui/CursorWrapper";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -81,6 +82,7 @@ export default function RootLayout({
           {children}
         </SmoothScroll>
         <Analytics />
+        <GoogleAnalytics gaId="G-JEJCY2XSE2" />
       </body>
     </html>
   );
