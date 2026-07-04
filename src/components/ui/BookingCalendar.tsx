@@ -143,6 +143,7 @@ export default function BookingCalendar() {
                   
                   {/* Timezone Selector */}
                   <select 
+                    aria-label="Select Timezone"
                     value={clientTz}
                     onChange={(e) => setClientTz(e.target.value)}
                     className="bg-[#222] border border-white/10 text-white/70 text-xs rounded-md px-2 py-1 outline-none focus:border-[#FF5A2A] transition-colors max-w-[150px] truncate"
@@ -277,6 +278,7 @@ export default function BookingCalendar() {
           <div className="w-full bg-[#222] rounded-lg p-2.5 border border-white/5 flex flex-col gap-1 overflow-hidden">
             <label className="text-[8px] text-white/40 uppercase font-bold tracking-widest">Your Timezone</label>
             <select 
+              aria-label="Select Timezone"
               value={clientTz}
               onChange={(e) => setClientTz(e.target.value)}
               className="w-full bg-transparent text-white/90 text-xs outline-none focus:text-[#FF5A2A] transition-colors truncate"

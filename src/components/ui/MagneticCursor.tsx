@@ -63,6 +63,7 @@ export default function MagneticCursor() {
   return (
     <>
       <motion.div
+        aria-hidden="true"
         className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white/30 pointer-events-none z-[9999] mix-blend-difference"
         style={{
           x: cursorXSpring,
@@ -76,6 +77,7 @@ export default function MagneticCursor() {
         transition={{ duration: 0.2, ease: "easeOut" }}
       />
       <motion.div
+        aria-hidden="true"
         className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-[10000] mix-blend-difference"
         style={{
           x: innerCursorXSpring,
