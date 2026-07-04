@@ -23,11 +23,9 @@ export default function Hero() {
       </motion.div>
 
       {/* Massive Typography Main Heading */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-5xl mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black"
+      <div
+        className="max-w-5xl mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black opacity-0 animate-hero-fade-in-up"
+        style={{ animationDelay: '100ms' }}
       >
         <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[8rem] lg:text-[10rem] text-[#F3F4F6] m-0 p-0 uppercase break-words leading-[0.9] text-center w-full">
           GET HIGH-CONVERTING
@@ -35,7 +33,7 @@ export default function Hero() {
         <h1 className="text-[2.8rem] sm:text-[4.5rem] md:text-[9rem] lg:text-[11rem] text-[#FF5A2A] m-0 p-0 uppercase break-words leading-[0.9] text-center w-full">
           WEBSITES.
         </h1>
-      </motion.div>
+      </div>
 
       {/* Subheading */}
       <motion.p
