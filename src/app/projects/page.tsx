@@ -10,7 +10,7 @@ const LIVE_DEMOS = [
   {
     title: "Zuppa Food Delivery",
     niche: "Web App",
-    link: "https://zuppa-the-food-delhivery-app.vercel.app/",
+    link: "/projects/zuppa",
     image: "/zuppa.jpg",
     color: "from-orange-500/20 to-red-500/20",
     border: "border-orange-500/30",
@@ -18,7 +18,7 @@ const LIVE_DEMOS = [
   {
     title: "Bhavesh Skate",
     niche: "Interactive Website",
-    link: "https://bhaveshskate.netlify.app/",
+    link: "/projects/skate",
     image: "/skate.jpg",
     color: "from-blue-500/20 to-purple-500/20",
     border: "border-blue-500/30",
