@@ -25,7 +25,7 @@ export default function About() {
             {/* The user's image will be loaded here */}
             <Image 
               src="/Hero Image.png" 
-              alt="Bhavesh - Premium Web Developer" 
+              alt="Bhavesh Works - Premium Web Developer" 
               fill
               className="object-cover"
             />

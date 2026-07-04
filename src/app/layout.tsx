@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Bhavesh Works",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Bhavesh Works Portfolio",
@@ -43,8 +43,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bhavesh Works | Premium Web Developer",
     description: "Crafting Websites That Clients Remember.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Bhavesh Works",
+  image: "https://bhaveshworks.online/og-image.png",
+  url: "https://bhaveshworks.online",
+  description: "Bhavesh Works: Crafting Websites That Clients Remember.",
 };
 
 export default function RootLayout({
@@ -55,6 +64,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent-glow selection:text-white font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll>
           <Navbar />
           <MagneticCursor />
