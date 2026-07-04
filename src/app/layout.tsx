@@ -82,7 +82,7 @@ export default function RootLayout({
           {children}
         </SmoothScroll>
         <Analytics />
-        <GoogleAnalytics gaId="G-JEJCY2XSE2" />
+        <GoogleAnalytics gaId="G-03MYXNCGFE" />
       </body>
     </html>
   );
