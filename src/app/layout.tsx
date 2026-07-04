@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import MagneticCursor from "@/components/ui/MagneticCursor";
 import Navbar from "@/components/layout/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -73,6 +74,7 @@ export default function RootLayout({
           <MagneticCursor />
           {children}
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
