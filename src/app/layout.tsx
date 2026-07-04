@@ -18,21 +18,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bhavesh Studio | Premium Web Developer",
-  description: "Crafting Websites That Clients Remember. I build premium websites, SaaS products, AI dashboards, and high-converting digital experiences.",
-  keywords: ["Web Developer", "Frontend Architect", "UX Design", "Next.js", "React", "GSAP", "Three.js", "Framer Motion", "Portfolio"],
+  title: "Bhavesh Works | Premium Web Developer & Frontend Architect",
+  description: "Bhavesh Works: Crafting Websites That Clients Remember. I build premium websites, SaaS products, AI dashboards, and high-converting digital experiences.",
+  keywords: ["Bhavesh Works", "bhaveshworks.online", "Web Developer", "Frontend Architect", "UX Design", "Next.js", "React", "GSAP", "Three.js", "Portfolio"],
   authors: [{ name: "Bhavesh" }],
+  metadataBase: new URL("https://bhaveshworks.online"),
   openGraph: {
-    title: "Bhavesh Studio | Premium Web Developer",
+    title: "Bhavesh Works | Premium Web Developer",
     description: "Crafting Websites That Clients Remember.",
-    url: "https://bhavesh.studio",
-    siteName: "Bhavesh Studio",
+    url: "https://bhaveshworks.online",
+    siteName: "Bhavesh Works",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Bhavesh Studio Portfolio",
+        alt: "Bhavesh Works Portfolio",
       },
     ],
     locale: "en_US",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bhavesh Studio | Premium Web Developer",
+    title: "Bhavesh Works | Premium Web Developer",
     description: "Crafting Websites That Clients Remember.",
     images: ["/og-image.jpg"],
   },
