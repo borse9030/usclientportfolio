@@ -41,10 +41,10 @@
 
   @keyframes navbar-slide-down {
     0% {
-      transform: translate(-50%, -100px);
+      transform: translateY(-100px);
     }
     100% {
-      transform: translate(-50%, 0);
+      transform: translateY(0);
     }
   }
 
