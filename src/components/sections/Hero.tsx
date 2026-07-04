@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Massive Typography Main Heading */}
       <div
-        className="max-w-5xl mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black opacity-0 animate-hero-fade-in-up"
+        className="w-full max-w-[90vw] mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black opacity-0 animate-hero-fade-in-up"
         style={{ animationDelay: '100ms' }}
       >
         <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[8rem] lg:text-[10rem] text-[#F3F4F6] m-0 p-0 uppercase break-words leading-[0.9] text-center w-full">
