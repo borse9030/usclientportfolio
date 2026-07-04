@@ -5,7 +5,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import dynamic from 'next/dynamic';
 import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/react";
-const MagneticCursor = dynamic(() => import('@/components/ui/MagneticCursor'));
+import CursorWrapper from "@/components/ui/CursorWrapper";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -72,7 +72,7 @@ export default function RootLayout({
         />
         <SmoothScroll>
           <Navbar />
-          <MagneticCursor />
+          <CursorWrapper />
           {children}
         </SmoothScroll>
         <Analytics />
