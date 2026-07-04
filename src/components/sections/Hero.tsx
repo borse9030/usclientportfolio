@@ -5,12 +5,6 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-32 pb-20 px-4 bg-[#0A0A0A] overflow-hidden text-center z-10">
       {/* Very faint background elements to match the clone */}
-      <img 
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.01)'/%3E%3C/svg%3E" 
-        alt="background" 
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-[-1]" 
-        fetchPriority="high"
-      />
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#00F5D4]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-[#FF5A2A]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -27,8 +21,7 @@ export default function Hero() {
 
       {/* Massive Typography Main Heading */}
       <div
-        className="w-full max-w-[90vw] mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black animate-hero-fade-in-up"
-        style={{ animationDelay: '100ms' }}
+        className="w-full max-w-[90vw] mx-auto flex flex-col items-center leading-[0.85] tracking-[-0.03em] font-black"
       >
         <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[8rem] lg:text-[10rem] text-[#F3F4F6] m-0 p-0 uppercase break-words leading-[0.9] text-center w-full">
           GET HIGH-CONVERTING
