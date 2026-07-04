@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -8,11 +7,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-[600px] md:w-auto"
+    <nav 
+      className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-[600px] md:w-auto animate-navbar-slide-down"
     >
       <div className="flex items-center justify-between md:justify-center gap-2 md:gap-8 px-4 md:px-6 py-3 bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(255,90,42,0.15)] rounded-full w-full">
         
@@ -63,6 +59,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

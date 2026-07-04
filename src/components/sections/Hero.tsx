@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -10,17 +9,15 @@ export default function Hero() {
       <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-[#FF5A2A]/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Pill Badge */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 mb-10 backdrop-blur-md"
+      <div 
+        className="flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 mb-10 backdrop-blur-md opacity-0 animate-hero-fade-in-up"
+        style={{ animationDelay: '0ms' }}
       >
         <div className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />
         <span className="text-[10px] tracking-[0.2em] font-bold text-white/80 uppercase">
           LIMITED TO 5 PREMIUM CLIENTS / MONTH
         </span>
-      </motion.div>
+      </div>
 
       {/* Massive Typography Main Heading */}
       <div
@@ -36,23 +33,19 @@ export default function Hero() {
       </div>
 
       {/* Subheading */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="mt-8 md:mt-10 text-base sm:text-xl md:text-2xl text-[#A1A1AA] max-w-[95%] md:max-w-2xl mx-auto font-medium"
+      <p
+        className="mt-8 md:mt-10 text-base sm:text-xl md:text-2xl text-[#A1A1AA] max-w-[95%] md:max-w-2xl mx-auto font-medium opacity-0 animate-hero-fade-in-up"
+        style={{ animationDelay: '300ms' }}
       >
         Build a world-class digital presence and attract premium clients — 
         <br className="hidden md:block" />
         with real engineering support, step-by-step.
-      </motion.p>
+      </p>
 
       {/* CTA Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-12"
+      <div
+        className="mt-12 opacity-0 animate-hero-fade-in-up"
+        style={{ animationDelay: '400ms' }}
       >
         <a 
           href="https://wa.me/919529185458?text=Hi%20Bhavesh,%20I'm%20interested%20in%20working%20with%20you!"
@@ -67,7 +60,7 @@ export default function Hero() {
             </svg>
           </div>
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -39,7 +39,17 @@
     }
   }
 
+  @keyframes navbar-slide-down {
+    0% {
+      transform: translate(-50%, -100px);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
+
   --animate-hero-fade-in-up: hero-fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-navbar-slide-down: navbar-slide-down 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @utility clay-card {

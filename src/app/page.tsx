@@ -1,9 +1,11 @@
 import Hero from "@/components/sections/Hero";
-import ValueProp from "@/components/sections/ValueProp";
-import About from "@/components/sections/About";
-import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
-import AnimatedDivider from "@/components/ui/AnimatedDivider";
+import dynamic from 'next/dynamic';
+
+const ValueProp = dynamic(() => import('@/components/sections/ValueProp'));
+const About = dynamic(() => import('@/components/sections/About'));
+const Contact = dynamic(() => import('@/components/sections/Contact'));
+const Footer = dynamic(() => import('@/components/sections/Footer'));
+const AnimatedDivider = dynamic(() => import('@/components/ui/AnimatedDivider'));
 
 export default function Home() {
   return (

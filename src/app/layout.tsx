@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import MagneticCursor from "@/components/ui/MagneticCursor";
+import dynamic from 'next/dynamic';
 import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/react";
+
+const MagneticCursor = dynamic(() => import('@/components/ui/MagneticCursor'), { ssr: false });
 
 const outfit = Outfit({
   variable: "--font-outfit",
