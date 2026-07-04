@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-[600px] md:w-auto animate-navbar-slide-down"
+      className="fixed top-4 md:top-6 left-1/2 z-[100] w-[95%] max-w-[600px] md:w-auto animate-navbar-slide-down"
     >
       <div className="flex items-center justify-between md:justify-center gap-2 md:gap-8 px-4 md:px-6 py-3 bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(255,90,42,0.15)] rounded-full w-full">
         
